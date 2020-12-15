@@ -10,7 +10,10 @@ namespace URLShipping.Models
     private int _length;
     private int _height;
     private int _width;
+    private double _cost;
+    private int _volume;
 
+    private static List<Parcel> _instances = new List<Parcel> {};
     public Parcel(string name, int weight, int length, int height, int width)
     {
       _name = name;
@@ -18,6 +21,9 @@ namespace URLShipping.Models
       _length = length;
       _height = height;
       _width = width;
+      // _volume = 0;
+      _instances.Add(this);
+      
     }
     public string Name
     {
@@ -50,10 +56,14 @@ namespace URLShipping.Models
     }
     public double CostToShip()
     { 
-      Console.WriteLine(this.Weight);
-      Console.WriteLine(this.Volume());
+      
       double result = (double) this.Weight / this.Volume() *50;
       return Math.Round(result, 2); 
+    
+    }
+    public static List<Parcel> GetAll()
+    {
+      return _instances;
     }
   }
 }
