@@ -49,7 +49,18 @@ This is a school assignment for Epicodus bootcamp practicing MVC project setup
     <th></th>
     <th></th>
 </table>
-
+<!-- 
+Parcels:
+Name: 
+**
+Dimensions : 
+Height 
+Width 
+Length
+**
+Volume:
+Weight
+-->
 ## Contact 
 - posten.coding@gmail.com
 
