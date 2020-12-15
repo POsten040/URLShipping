@@ -30,11 +30,18 @@ namespace URLShipping.Tests
       int Height = 5;
       int Width = 6;
       Parcel newParcel = new Parcel("test", 40, Length, Height, Width);
-
       int result = newParcel.Volume();
-
       Assert.AreEqual(120, result);
-      
+    }
+    [TestMethod]
+    public void CostToShip_CorrectlyCalculatesCostOfShipping_Double()
+    {
+      int Length = 4;
+      int Height = 5;
+      int Width = 6;
+      Parcel newParcel = new Parcel("test", 40, Length, Height, Width);
+      double result = newParcel.CostToShip();
+      Assert.AreEqual(16.67, result);
     }
   }
 }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace URLShipping.Models
 {
   public class Parcel
@@ -44,6 +47,13 @@ namespace URLShipping.Models
     public int Volume()
     {
       return Length * Height * Width;
+    }
+    public double CostToShip()
+    { 
+      Console.WriteLine(this.Weight);
+      Console.WriteLine(this.Volume());
+      double result = (double) this.Weight / this.Volume() *50;
+      return Math.Round(result, 2); 
     }
   }
 }
