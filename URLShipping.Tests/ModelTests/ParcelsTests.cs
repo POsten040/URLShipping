@@ -14,16 +14,27 @@ namespace URLShipping.Tests
     [TestMethod]
     public void ParcelConstructor_CreatesInstanceOfParcel_Parcel()
     {
-      int[] dimensions = {4,5,6};
-      Parcel newParcel = new Parcel("test", 40, dimensions);
+      Parcel newParcel = new Parcel("test", 40, 4, 5, 6);
       string name = newParcel.Name;
       int weight = newParcel.Weight;
-      int[] testDimensions = newParcel.Dimensions;
+      Assert.AreEqual("test", name);
+      Assert.AreEqual(40, weight);
+      Assert.AreEqual(4, newParcel.Length);
+      Assert.AreEqual(5, newParcel.Height);
+      Assert.AreEqual(6, newParcel.Width);
+    }
+    [TestMethod]
+    public void Volume_CorrectlyCaluculatesVolumeUsingDimensions_Int()
+    {
+      int Length = 4;
+      int Height = 5;
+      int Width = 6;
+      Parcel newParcel = new Parcel("test", 40, Length, Height, Width);
 
-      Assert.AreEqual("x", name);
-      Assert.AreEqual(12, weight);
-      Assert.AreEqual(dimensions, testDimensions);
+      int result = newParcel.Volume();
 
+      Assert.AreEqual(120, result);
+      
     }
   }
 }
