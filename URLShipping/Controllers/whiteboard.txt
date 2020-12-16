@@ -1,0 +1,26 @@
+12/15/20
+
+Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+
+// pseudo code
+funciton(arr)
+sum = 0 
+for(loop)
+  sum += arr[i]
+
+  return sum 
+
+// C# code
+
+namespace Adder
+{
+  public int Add(arr)
+  {
+    int sum = 0;
+    for (int index = 0; index >= arr.length; index ++) 
+    {
+      sum += index;
+    }
+    return sum;
+  }
+}
